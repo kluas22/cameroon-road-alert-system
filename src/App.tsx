@@ -11,6 +11,7 @@ import EmergencyContacts from "./pages/EmergencyContacts";
 import Dashboard from "./pages/Dashboard";
 import News from "./pages/News";
 import Contact from "./pages/Contact";
+import RealTimeTracking from "./pages/RealTimeTracking";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/news" element={<News />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/real-time-tracking" element={<RealTimeTracking />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

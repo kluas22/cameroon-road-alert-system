@@ -27,6 +27,9 @@ const Navigation = () => {
             <Link to="/report" className="px-3 py-2 rounded-md text-sm font-medium text-deep-blue hover:bg-muted dark:text-white dark:hover:bg-secondary/20">
               Report Accident
             </Link>
+            <Link to="/real-time-tracking" className="px-3 py-2 rounded-md text-sm font-medium text-deep-blue hover:bg-muted dark:text-white dark:hover:bg-secondary/20">
+              Real-Time Tracking
+            </Link>
             <Link to="/emergency-contacts" className="px-3 py-2 rounded-md text-sm font-medium text-deep-blue hover:bg-muted dark:text-white dark:hover:bg-secondary/20">
               Emergency Contacts
             </Link>
@@ -74,6 +77,13 @@ const Navigation = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Report Accident
+            </Link>
+            <Link 
+              to="/real-time-tracking" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-deep-blue hover:bg-muted dark:text-white dark:hover:bg-secondary/20"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Real-Time Tracking
             </Link>
             <Link 
               to="/emergency-contacts" 
