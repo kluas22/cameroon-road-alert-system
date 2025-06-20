@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -232,11 +231,11 @@ const AccidentTracker = () => {
                   <div key={update.id} className="border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        {update.type === 'image' && <Camera className="h-4 w-4 text-blue-500" />}
-                        {update.type === 'video' && <Video className="h-4 w-4 text-purple-500" />}
-                        {!update.type && <MapPin className="h-4 w-4 text-green-500" />}
+                        {'type' in update && update.type === 'image' && <Camera className="h-4 w-4 text-blue-500" />}
+                        {'type' in update && update.type === 'video' && <Video className="h-4 w-4 text-purple-500" />}
+                        {!('type' in update) && <MapPin className="h-4 w-4 text-green-500" />}
                         <Badge variant="outline" className="text-xs">
-                          {update.type || 'report'}
+                          {'type' in update ? update.type : 'report'}
                         </Badge>
                         {update.category === 'report' && 'priority' in update && (
                           <Badge variant={update.priority === 'high' ? 'destructive' : update.priority === 'medium' ? 'default' : 'secondary'} className="text-xs">
@@ -283,7 +282,7 @@ const AccidentTracker = () => {
                   <div key={update.id} className="border border-gray-200 dark:border-gray-700 rounded-lg p-3">
                     <div className="flex items-start justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        {update.type === 'image' ? <Camera className="h-4 w-4 text-blue-500" /> : <Video className="h-4 w-4 text-purple-500" />}
+                        {'type' in update && update.type === 'image' ? <Camera className="h-4 w-4 text-blue-500" /> : <Video className="h-4 w-4 text-purple-500" />}
                         <Badge variant="outline" className="text-xs">{update.type}</Badge>
                       </div>
                       <div className="flex items-center gap-1 text-xs text-gray-500">
